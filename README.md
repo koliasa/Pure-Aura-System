@@ -17,6 +17,7 @@ The Pure Aura System provides a simple, yet effective solution for air purificat
 
 The diagram lower shows the connections between the different components of the Pure Aura System. The Arduino Uno CH340 is connected to the TCS TUS-100 CONN REV4 which measures real-time temperature and humidity, air pollution threshold, carbon monoxide (CO) and hazardous gas level. The TCS TUS-100 CONN REV4 is also connected to the TCS TUS-100 SENSOR REV5 which detects the same parameters as the TCS TUS-100 CONN REV4. The 2-Channel Relay Module is connected to the Arduino Uno CH340 and the ventilation system. The Relay Module is used to turn on and off the ventilation system based on the readings from the temperature and humidity sensors, air pollution threshold, CO and hazardous gas levels.
 
+## General scheme
 ```plaintext
   +---------------+          +---------------+
   |   Arduino Uno +----------> TCS TUS-100   |
@@ -36,6 +37,18 @@ The diagram lower shows the connections between the different components of the 
   +---------------+          +---------------+
 
 ```
+## Connection diagram also
+```mermaid
+graph LR;
+    Arduino_Uno_CH340[Arduino Uno CH340] -->|2-pin JST connector|TCS_TUS100_CONN_REV4[TCS TUS-100 CONN REV4];
+    TCS_TUS100_CONN_REV4 -->|4-pin JST connector|TCS_TUS100_SENSOR_REV5[TCS TUS-100 SENSOR REV5];
+    Arduino_Uno_CH340 -->|GPIO 8|Relay_Module[2-channel relay module 5V for Arduino PIC ARM AVR];
+    Relay_Module -->|IN1|TCS_TUS100_SENSOR_REV5;
+    Relay_Module -->|IN2|TCS_TUS100_SENSOR_REV5;
+    TCS_TUS100_CONN_REV4 -->|GPIO A4|Arduino_Uno_CH340;
+    TCS_TUS100_CONN_REV4 -->|GPIO A5|Arduino_Uno_CH340;
+```
+
 ## The basic application code will look like this
 ```C++
 // Define pins
