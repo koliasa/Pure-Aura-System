@@ -1,6 +1,6 @@
 # Pure Aura System
 
-The Pure Aura System is a solution for an affordable air purification system. It utilizes an Arduino Uno CH340 as the main board, connected to a TCS TUS-100 CONN REV4 which measures real-time temperature and humidity, air pollution threshold, carbon monoxide (CO) level, and hazardous gases (LP), and activates the ventilation system through a 2-channel relay module 5V for Arduino PIC ARM AVR.
+The Pure Aura System (PAS) is a solution for an affordable air purification system. It utilizes an Arduino Uno CH340 as the main board, connected to a TCS TUS-100 CONN REV4 which measures real-time temperature and humidity, air pollution threshold, carbon monoxide (CO) level, and hazardous gases (LP), and activates the ventilation system through a 2-channel relay module 5V for Arduino PIC ARM AVR.
 
 ## Equipment List
 
